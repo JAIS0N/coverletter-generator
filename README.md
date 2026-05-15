@@ -1,4 +1,3 @@
-Markdown
 # Cover Letter Generator README
 
 ## 🚀 How to Run on Local
@@ -8,27 +7,30 @@ Markdown
 
 ### 2. Set Up the Environment
 Open your terminal, navigate to the directory where you want to keep your cover letter scripts, and run the following commands to initialize a project and install the required library:
-
+```bash
 npm init -y
 npm install docx
-3. Save and Configure the Script
+```
+
+### 3. Save and Configure the Script
 Create a new JavaScript file (e.g., generateLetter.js).
 
 Paste the generated Node.js script into this file.
 
 Crucial Step: Scroll to the bottom of the script and ensure the path variable is pointing to a valid directory on your machine. To save it in the same folder as the script, use a relative path:
 
-JavaScript
+```javascript
 const path = './Jaison_CoverLetter_TargetCompany.docx';
-
+```
 
 ### 4. Execute the Script
 Run the script using Node.js:
-
+```bash
 node generateLetter.js
+```
 The terminal will process the file, and your newly formatted .docx cover letter will appear in your folder, ready to submit!
 
-🤖 Master Prompt for the AI Model
+## 🤖 Master Prompt for the AI Model
 To generate a new, highly tailored script for a specific job application, copy the entire prompt below and paste it into ChatGPT, Gemini, or Claude. Paste the specific Job Description at the very bottom before sending.
 
 Copy everything below this line:
@@ -64,6 +66,7 @@ Skills: React, Node.js, Java, Python, PostgreSQL, MongoDB, Docker, Kubernetes, T
 Use the exact script structure below. Maintain all layout, margin, font (Arial), sizing, and border logic. ONLY replace the [Date], [Greeting], [Paragraph X], and the output filename variables with the tailored content.
 
 // START FORMAT TEMPLATE
+```javascript
 const { Document, Packer, Paragraph, TextRun, AlignmentType, BorderStyle } = require('docx');
 const fs = require('fs');
 
@@ -75,7 +78,7 @@ page: { size: { width: 12240, height: 15840 }, margin: { top: 1260, right: 1260,
 },
 children: [
 new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 0 }, children: [new TextRun({ text: "Jaison Felix Menezes", bold: true, size: 30, font: "Arial" })] }),
-new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 40 }, children: [new TextRun({ text: "Austin, TX  |  562-837-6867  |  jaisonfelix.menezes01@student.csulb.edu", size: 18, color: "555555" })] }),
+new Paragraph({ alignment: AlignmentType.LEFT, spacing: { after: 40 }, children: [new TextRun({ text: "Austin, TX  |  111-111-1111  |  jaisonfelix.menezes01@student.csulb.edu", size: 18, color: "555555" })] }),
 new Paragraph({ border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "999999", space: 1 } }, spacing: { after: 200 }, children: [] }),
 new Paragraph({ spacing: { after: 160 }, children: [new TextRun({ text: "[Current Date]", size: 22 })] }),
 new Paragraph({ spacing: { after: 160 }, children: [new TextRun({ text: "Dear [Company/Team Hiring Manager],", size: 22 })] }),
@@ -95,9 +98,8 @@ Packer.toBuffer(doc).then(buf => {
 const path = './Jaison_CoverLetter_[Company]_[Role].docx';
 fs.writeFileSync(path, buf);
 });
+```
 // END FORMAT TEMPLATE
 
 Here is the Job Description:
 [PASTE JD HERE]
-
-####
