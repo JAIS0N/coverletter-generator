@@ -25,7 +25,7 @@ const doc = new Document({
       new Paragraph({
         alignment: AlignmentType.LEFT,
         spacing: { after: 40 },
-        children: [new TextRun({ text: "Austin, TX  |  562-837-6867  |  jaisonfelix.menezes01@student.csulb.edu", size: 18, color: "555555" })]
+        children: [new TextRun({ text: "Austin, TX  |  111-111-1111  |  jaisonfelix.menezes01@student.csulb.edu", size: 18, color: "555555" })]
       }),
       new Paragraph({
         border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "999999", space: 1 } },
